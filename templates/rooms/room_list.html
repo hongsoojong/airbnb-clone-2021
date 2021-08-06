@@ -14,15 +14,15 @@
 
     <h5>
     
-    {% if page is not 1 %}
-        <a href="?page={{page|add:-1}}">Previous</a>
+    {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Previous</a>
     {% endif %}
     
-    Page {{page}} of {{page_count}}
+    Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
 
     
-    {% if not page == page_count %}
-    <a href="?page={{page|add:1}}">Next</a>    
+    {% if page_obj.has_next %}
+    <a href="?page={{page_obj.next_page_number}}">Next</a>    
     {% endif %}
       
     </h5>
