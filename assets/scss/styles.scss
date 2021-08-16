@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+
+.nav_link{
+    @apply ml-8 border-b-2 border-white hover:border-red-400 flex items-center h-full;
+    a{
+        @apply py-10 px-3;
+    }
+}
+
+.btn{
+    @apply w-full border rounded-sm py-4 mb-2 font-light;
+}
+
+input{
+    @apply w-full border rounded-sm py-4 mb-2 font-light border-gray-500 px-5 text-left;
+    &:focus {
+      @apply outline-none border-red-400;
+    }   
+}
+
+form{
+    .input{
+        @apply mb-2;
+    &.has_error{
+        input{
+            @apply bg-red-100 border-gray-500;
+            &:focus{
+                @apply border-gray-500;
+            }
+
+        }
+    }
+    }
+}
+
+@tailwind utilities;
