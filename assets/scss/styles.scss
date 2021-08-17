@@ -9,14 +9,29 @@
 }
 
 .btn{
-    @apply w-full border rounded-sm py-4 mb-2 font-light;
+    @apply w-full border rounded-sm py-4 mb-2 text-center text-gray-600 border-gray-400;
 }
 
-input{
+.btn-link{
+    @apply w-full border py-3 rounded-xl mb-2 text-center bg-red-400 border-red-400 text-white;
+}
+
+input,
+textarea,
+select{
     @apply w-full border rounded-sm py-4 mb-2 font-light border-gray-500 px-5 text-left;
     &:focus {
       @apply outline-none border-red-400;
     }   
+}
+
+select{
+    height: 30px;
+}
+
+textarea{
+    resize: none;
+    height: 100px;
 }
 
 form{
@@ -31,6 +46,41 @@ form{
 
         }
     }
+    }
+}
+
+@keyframes messageFadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    5%{
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    95%{
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.message{
+    animation: messageFadeIn 5s ease-in-out forwards;
+    &.error{
+        @apply bg-red-600;
+    }
+    &.info{
+        @apply bg-blue-500;
+    }
+    &.success{
+        @apply bg-green-500;
+    }
+    &.warning{
+        @apply bg-yellow-400;
     }
 }
 

@@ -12,6 +12,7 @@
             </title>
         </head>
         <body class="text-gray-800 mt-24 font-light">
+            {% include 'partials/messages.html' %}
             <header class="container max-w-full flex items-center justify-between px-8 h-20 border-b border-gray-300 fixed bg-white inset-0">
                 <div class="flex items-center">
                     <a href="{% url 'core:home' %}" class="mr-6">
@@ -27,7 +28,7 @@
             </header>
 
             {% block content %}{% endblock %}
-
+            
             {% include "partials/footer.html" %}
         </body>
     </html>
