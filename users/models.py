@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.shortcuts import reverse
 from django.db import models
+from core import managers as core_managers
 
 
 class User(AbstractUser):
@@ -57,6 +58,7 @@ class User(AbstractUser):
     login_method = models.CharField(
         max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
     )
+    objects = core_managers.CustomModelManager()
 
     def get_absolute_url(self):
         return reverse("users:profile", kwargs={"pk": self.pk})

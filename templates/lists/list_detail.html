@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block page_title %}
+    My Favorites Rooms
+{% endblock page_title %}
+
+
+{% block search-bar %}
+    
+{% endblock search-bar %}
+    
+
+{% block content %}
+
+    <div class="min-h-75vh">
+            <h3 class="container mx-auto flex flex-col items-center py-11 text-2xl">Your favorites</h3>        
+                <div class="container mx-auto flex flex-col items-center mx-10 my-5">
+                    {% for room in user.list.rooms.all %}
+                    {% include 'mixins/room_card.html' with room=room%}
+                {% endfor %}
+                </div>           
+    </div>
+            
+{% endblock content %}
