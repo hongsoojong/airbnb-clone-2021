@@ -8,3 +8,4 @@ class ReviewAdmin(admin.ModelAdmin):
     """Review Model Definition"""
 
     list_display = ("__str__", "rating_average")
+
