@@ -141,6 +141,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+if not DEBUG:
+    STATIC_ROOT = "static"
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 AUTH_USER_MODEL = "users.User"
