@@ -21,18 +21,12 @@ class User(AbstractUser):
     LANGUAGE_ENGLISH = "english"
     LANGUAGE_KOREAN = "korean"
 
-    LANGUAGE_CHOICES = (
-        (LANGUAGE_ENGLISH, "English"),
-        (LANGUAGE_KOREAN, "Korean"),
-    )
+    LANGUAGE_CHOICES = ((LANGUAGE_ENGLISH, "English"), (LANGUAGE_KOREAN, "Korean"))
 
     CURRENCY_USD = "usd"
     CURRENCY_KRW = "krw"
 
-    CURRENCY_CHOICES = (
-        (CURRENCY_USD, "USD"),
-        (CURRENCY_KRW, "KRW"),
-    )
+    CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_KRW, "KRW"))
 
     LOGIN_EMAIL = "email"
     LOGIN_GITHUB = "github"
@@ -58,7 +52,7 @@ class User(AbstractUser):
     login_method = models.CharField(
         max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
     )
-    objects = core_managers.CustomModelManager()
+    objects = core_managers.CustomUserManager()
 
     def get_absolute_url(self):
         return reverse("users:profile", kwargs={"pk": self.pk})
