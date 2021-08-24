@@ -128,7 +128,7 @@ def github_callback(request):
 
 def kakao_login(request):
     REST_API_KEY = os.environ.get("KAKAO_ID")
-    REDIRECT_URI = "http://127.0.0.1:8000/users/login/kakao/callback"
+    REDIRECT_URI = "http://airbnb-clone.eba-jdcipkvv.ap-northeast-2.elasticbeanstalk.com/users/login/kakao/callback"
     return redirect(
         f"https://kauth.kakao.com/oauth/authorize?client_id={REST_API_KEY}&redirect_uri={REDIRECT_URI}&response_type=code"
     )
