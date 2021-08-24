@@ -175,7 +175,7 @@ if not DEBUG:
     AWS_STORAGE_BUCKET_NAME = "airbnb-clone-hsj"
 
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.ap-northeast-2.amazonaws.com"
-    STATIC_URL = f"{AWS_S3_CUSTOM_DOMAIN}/static"
+    STATIC_URL = f"{AWS_S3_CUSTOM_DOMAIN}/static/"
 
     # Sentry
     sentry_sdk.init(
